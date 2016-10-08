@@ -32,8 +32,8 @@ var i,j;
 for(i=0;i<8;i++){
 document.write('<tr>');
 	for(j=0;j<8;j++){
-	//document.write('<td><img src="othello/empty.png" onclick="doCell(this,'+i+','+j+')"/></td>');
-	document.write('<td onclick="board.doCell(this,'+i+','+j+')"><div id="cell'+i+'_'+j+'" ></div> </td>');
+		//document.write('<td><img src="othello/empty.png" onclick="doCell(this,'+i+','+j+')"/></td>');
+		document.write('<td onclick="board.doCell(this,'+i+','+j+')"><div id="cell'+i+'_'+j+'" ></div> </td>');
 	}
 document.write('</tr>');
 }
@@ -118,7 +118,7 @@ var outprintappend=this.outprintappend= function outprintappend(msg,level){
 	if(level && level>debug) return;
 	console.log(msg);
 	var message=document.getElementById('message');
-    if(message){
+    	if(message){
 		if (level<1)
 			setTimeout(function(){
 				message.innerHTML =msg;
@@ -135,7 +135,7 @@ var i,j;
 for(i=0;i<8;i++){
 	oth[i]=new Array(8);
 	for(j=0;j<8;j++){
-	oth[i][j]=0;
+		oth[i][j]=0;
 	}
 }
 doPlayAdd(1,3,3);
@@ -145,11 +145,11 @@ doPlayAdd(2,4,3);
 }.bind(this);
 
 function doPlaySwitch(player,i,j,i0,j0,nb){
-var k;
-for(k=0;k<nb;k++){
-	i+=i0;j+=j0;
-	doPlayAdd(player,i,j);
-}
+	var k;
+	for(k=0;k<nb;k++){
+		i+=i0;j+=j0;
+		doPlayAdd(player,i,j);
+	}
 }
 function doPlayAdd(player,i,j,time){
 outprintappend("doPlayAdd (change piece color) "+i+","+j+" player"+player+" "+time,3);
